@@ -29,14 +29,19 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtNama = new System.Windows.Forms.TextBox();
-            this.txtNIM = new System.Windows.Forms.TextBox();
-            this.txtAlamat = new System.Windows.Forms.TextBox();
+            this.pdp = new System.Windows.Forms.TextBox();
+            this.ddp = new System.Windows.Forms.TextBox();
+            this.nmp = new System.Windows.Forms.TextBox();
+            this.adp = new System.Windows.Forms.TextBox();
             this.NamaMahasiswa = new System.Windows.Forms.Label();
             this.JenisKelamin = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnsave = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.btnadd = new System.Windows.Forms.Button();
+            this.btnopen = new System.Windows.Forms.Button();
+            this.btnclose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,60 +55,60 @@
             this.dataGridView1.Size = new System.Drawing.Size(398, 376);
             this.dataGridView1.TabIndex = 12;
             // 
-            // textBox1
+            // pdp
             // 
-            this.textBox1.Location = new System.Drawing.Point(148, 223);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 22);
-            this.textBox1.TabIndex = 32;
+            this.pdp.Location = new System.Drawing.Point(148, 223);
+            this.pdp.Name = "pdp";
+            this.pdp.Size = new System.Drawing.Size(212, 22);
+            this.pdp.TabIndex = 32;
             // 
-            // txtNama
+            // ddp
             // 
-            this.txtNama.Location = new System.Drawing.Point(148, 190);
-            this.txtNama.Name = "txtNama";
-            this.txtNama.Size = new System.Drawing.Size(212, 22);
-            this.txtNama.TabIndex = 31;
+            this.ddp.Location = new System.Drawing.Point(148, 190);
+            this.ddp.Name = "ddp";
+            this.ddp.Size = new System.Drawing.Size(212, 22);
+            this.ddp.TabIndex = 31;
             // 
-            // txtNIM
+            // nmp
             // 
-            this.txtNIM.Location = new System.Drawing.Point(148, 156);
-            this.txtNIM.Name = "txtNIM";
-            this.txtNIM.Size = new System.Drawing.Size(212, 22);
-            this.txtNIM.TabIndex = 30;
+            this.nmp.Location = new System.Drawing.Point(148, 156);
+            this.nmp.Name = "nmp";
+            this.nmp.Size = new System.Drawing.Size(212, 22);
+            this.nmp.TabIndex = 30;
             // 
-            // txtAlamat
+            // adp
             // 
-            this.txtAlamat.Location = new System.Drawing.Point(148, 263);
-            this.txtAlamat.Name = "txtAlamat";
-            this.txtAlamat.Size = new System.Drawing.Size(212, 22);
-            this.txtAlamat.TabIndex = 29;
+            this.adp.Location = new System.Drawing.Point(148, 263);
+            this.adp.Name = "adp";
+            this.adp.Size = new System.Drawing.Size(212, 22);
+            this.adp.TabIndex = 29;
             // 
             // NamaMahasiswa
             // 
             this.NamaMahasiswa.AutoSize = true;
             this.NamaMahasiswa.Location = new System.Drawing.Point(20, 190);
             this.NamaMahasiswa.Name = "NamaMahasiswa";
-            this.NamaMahasiswa.Size = new System.Drawing.Size(44, 16);
+            this.NamaMahasiswa.Size = new System.Drawing.Size(46, 16);
             this.NamaMahasiswa.TabIndex = 28;
-            this.NamaMahasiswa.Text = "Nama";
+            this.NamaMahasiswa.Text = "Durasi";
             // 
             // JenisKelamin
             // 
             this.JenisKelamin.AutoSize = true;
             this.JenisKelamin.Location = new System.Drawing.Point(20, 223);
             this.JenisKelamin.Name = "JenisKelamin";
-            this.JenisKelamin.Size = new System.Drawing.Size(39, 16);
+            this.JenisKelamin.Size = new System.Drawing.Size(38, 16);
             this.JenisKelamin.TabIndex = 27;
-            this.JenisKelamin.Text = "Type";
+            this.JenisKelamin.Text = "Price";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(20, 263);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 16);
+            this.label2.Size = new System.Drawing.Size(44, 16);
             this.label2.TabIndex = 26;
-            this.label2.Text = "Brand";
+            this.label2.Text = "Active";
             // 
             // label1
             // 
@@ -114,16 +119,76 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Id";
             // 
+            // btnsave
+            // 
+            this.btnsave.ForeColor = System.Drawing.Color.Black;
+            this.btnsave.Location = new System.Drawing.Point(23, 314);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(75, 23);
+            this.btnsave.TabIndex = 33;
+            this.btnsave.Text = "Save";
+            this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+            // 
+            // btndelete
+            // 
+            this.btndelete.ForeColor = System.Drawing.Color.Black;
+            this.btndelete.Location = new System.Drawing.Point(23, 374);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(75, 23);
+            this.btndelete.TabIndex = 34;
+            this.btndelete.Text = "Delete";
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+            // 
+            // btnadd
+            // 
+            this.btnadd.ForeColor = System.Drawing.Color.Black;
+            this.btnadd.Location = new System.Drawing.Point(276, 313);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(75, 23);
+            this.btnadd.TabIndex = 35;
+            this.btnadd.Text = "Add";
+            this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
+            // 
+            // btnopen
+            // 
+            this.btnopen.ForeColor = System.Drawing.Color.Black;
+            this.btnopen.Location = new System.Drawing.Point(276, 374);
+            this.btnopen.Name = "btnopen";
+            this.btnopen.Size = new System.Drawing.Size(75, 23);
+            this.btnopen.TabIndex = 36;
+            this.btnopen.Text = "Open";
+            this.btnopen.UseVisualStyleBackColor = true;
+            this.btnopen.Click += new System.EventHandler(this.btnopen_Click);
+            // 
+            // btnclose
+            // 
+            this.btnclose.ForeColor = System.Drawing.Color.Black;
+            this.btnclose.Location = new System.Drawing.Point(713, 415);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(75, 23);
+            this.btnclose.TabIndex = 37;
+            this.btnclose.Text = "Close";
+            this.btnclose.UseVisualStyleBackColor = true;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSalmon;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtNama);
-            this.Controls.Add(this.txtNIM);
-            this.Controls.Add(this.txtAlamat);
+            this.Controls.Add(this.btnclose);
+            this.Controls.Add(this.btnopen);
+            this.Controls.Add(this.btnadd);
+            this.Controls.Add(this.btndelete);
+            this.Controls.Add(this.btnsave);
+            this.Controls.Add(this.pdp);
+            this.Controls.Add(this.ddp);
+            this.Controls.Add(this.nmp);
+            this.Controls.Add(this.adp);
             this.Controls.Add(this.NamaMahasiswa);
             this.Controls.Add(this.JenisKelamin);
             this.Controls.Add(this.label2);
@@ -141,13 +206,18 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtNama;
-        private System.Windows.Forms.TextBox txtNIM;
-        private System.Windows.Forms.TextBox txtAlamat;
+        private System.Windows.Forms.TextBox pdp;
+        private System.Windows.Forms.TextBox ddp;
+        private System.Windows.Forms.TextBox nmp;
+        private System.Windows.Forms.TextBox adp;
         private System.Windows.Forms.Label NamaMahasiswa;
         private System.Windows.Forms.Label JenisKelamin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnsave;
+        private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.Button btnadd;
+        private System.Windows.Forms.Button btnopen;
+        private System.Windows.Forms.Button btnclose;
     }
 }

@@ -30,14 +30,14 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNIM = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nmp = new System.Windows.Forms.TextBox();
+            this.idp = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnsave = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.clsbtn = new System.Windows.Forms.Button();
+            this.btnopen = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -61,19 +61,19 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Nama";
             // 
-            // txtNIM
+            // nmp
             // 
-            this.txtNIM.Location = new System.Drawing.Point(268, 307);
-            this.txtNIM.Name = "txtNIM";
-            this.txtNIM.Size = new System.Drawing.Size(212, 22);
-            this.txtNIM.TabIndex = 8;
+            this.nmp.Location = new System.Drawing.Point(268, 307);
+            this.nmp.Name = "nmp";
+            this.nmp.Size = new System.Drawing.Size(212, 22);
+            this.nmp.TabIndex = 8;
             // 
-            // textBox1
+            // idp
             // 
-            this.textBox1.Location = new System.Drawing.Point(268, 353);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 22);
-            this.textBox1.TabIndex = 9;
+            this.idp.Location = new System.Drawing.Point(268, 353);
+            this.idp.Name = "idp";
+            this.idp.Size = new System.Drawing.Size(212, 22);
+            this.idp.TabIndex = 9;
             // 
             // dataGridView1
             // 
@@ -84,6 +84,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(521, 282);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
@@ -91,44 +92,49 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
+            this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnsave
             // 
-            this.button2.Location = new System.Drawing.Point(268, 402);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnsave.Location = new System.Drawing.Point(268, 402);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(75, 23);
+            this.btnsave.TabIndex = 12;
+            this.btnsave.Text = "Save";
+            this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btndelete
             // 
-            this.button3.Location = new System.Drawing.Point(405, 402);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btndelete.Location = new System.Drawing.Point(405, 402);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(75, 23);
+            this.btndelete.TabIndex = 13;
+            this.btndelete.Text = "Delete";
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // clsbtn
             // 
-            this.button4.Location = new System.Drawing.Point(13, 415);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.clsbtn.Location = new System.Drawing.Point(13, 415);
+            this.clsbtn.Name = "clsbtn";
+            this.clsbtn.Size = new System.Drawing.Size(75, 23);
+            this.clsbtn.TabIndex = 14;
+            this.clsbtn.Text = "Close";
+            this.clsbtn.UseVisualStyleBackColor = true;
+            this.clsbtn.Click += new System.EventHandler(this.clsbtn_Click);
             // 
-            // button5
+            // btnopen
             // 
-            this.button5.Location = new System.Drawing.Point(670, 30);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnopen.Location = new System.Drawing.Point(670, 30);
+            this.btnopen.Name = "btnopen";
+            this.btnopen.Size = new System.Drawing.Size(75, 23);
+            this.btnopen.TabIndex = 15;
+            this.btnopen.Text = "Open";
+            this.btnopen.UseVisualStyleBackColor = true;
+            this.btnopen.Click += new System.EventHandler(this.button5_Click);
             // 
             // label3
             // 
@@ -147,14 +153,14 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnopen);
+            this.Controls.Add(this.clsbtn);
+            this.Controls.Add(this.btndelete);
+            this.Controls.Add(this.btnsave);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtNIM);
+            this.Controls.Add(this.idp);
+            this.Controls.Add(this.nmp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
@@ -169,14 +175,14 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNIM;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nmp;
+        private System.Windows.Forms.TextBox idp;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnsave;
+        private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.Button clsbtn;
+        private System.Windows.Forms.Button btnopen;
         private System.Windows.Forms.Label label3;
     }
 }

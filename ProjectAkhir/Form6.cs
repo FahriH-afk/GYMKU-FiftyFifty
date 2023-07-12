@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace ProjectAkhir
 {
-    public partial class Form5 : Form
+    public partial class Form6 : Form
     {
         private string stringConnection = "data source = LAPTOP-SAQOFK2U\\ACERNITRO;database=fitnes;User Id = sa; Password = 123";
         private SqlConnection koneksi;
-        public Form5()
+        public Form6()
         {
             InitializeComponent();
             koneksi = new SqlConnection(stringConnection);
@@ -25,13 +25,9 @@ namespace ProjectAkhir
         public void refreshform()
         {
             nmp.Text = "";
-            ddp.Text = "";
-            pdp.Text = "";
-            adp.Text = "";
+            sdp.Text = "";
             nmp.Enabled = false;
-            ddp.Enabled = false;
-            pdp.Enabled = false;
-            adp.Enabled = false;
+            sdp.Enabled = false;
             btnsave.Enabled = false;
             btndelete.Enabled = false;
         }
@@ -39,7 +35,7 @@ namespace ProjectAkhir
         private void dataGridView()
         {
             koneksi.Open();
-            string str = "select id, durasi, price, active from dbo.pr_latihan";
+            string str = "select id_pg, status_p from dbo.jenis_pelanggan";
             SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -47,47 +43,34 @@ namespace ProjectAkhir
             koneksi.Close();
         }
 
-        private void btnclose_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
             GYMKITA fm = new GYMKITA();
             fm.Show();
             this.Hide();
         }
 
-        private void btnsave_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            string id = nmp.Text;
-            string durasi = ddp.Text;
-            string price = pdp.Text;
-            string active = adp.Text;
+            string id_pg = nmp.Text;
+            string status_p = sdp.Text;
 
-            if (id == "")
+            if (id_pg == "")
             {
-                MessageBox.Show("Masukkan Id", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Masukkan Brand", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (durasi == "")
+            if (status_p == "")
             {
-                MessageBox.Show("Masukkan Durasi", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Masukkan Purchase Date", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (price == "")
-            {
-                MessageBox.Show("Masukkan Price", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (active == "")
-            {
-                MessageBox.Show("Masukkan Active", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
 
             else
             {
                 koneksi.Open();
-                string str = "Insert Into pr_latihan (id, durasi, price, active) values (@nmp, @ddp, @pdp, @adp)";
+                string str = "Insert Into jenis_pelanggan (id_pg, status_p) values (@nmp, @sdp)";
                 SqlCommand cmd = new SqlCommand(str, koneksi);
-                cmd.Parameters.Add(new SqlParameter("@nmp", id));
-                cmd.Parameters.Add(new SqlParameter("@ddp", durasi));
-                cmd.Parameters.Add(new SqlParameter("@pdp", price));
-                cmd.Parameters.Add(new SqlParameter("@adp", active));
+                cmd.Parameters.Add(new SqlParameter("@sdp", status_p));
+                cmd.Parameters.Add(new SqlParameter("@nmp", id_pg));
                 cmd.ExecuteNonQuery();
 
                 koneksi.Close();
@@ -97,17 +80,15 @@ namespace ProjectAkhir
             }
         }
 
-        private void btndelete_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             refreshform();
         }
 
-        private void btnadd_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             nmp.Enabled = true;
-            ddp.Enabled = true;
-            pdp.Enabled = true;
-            adp.Enabled = true;
+            sdp.Enabled = true;
             btnsave.Enabled = true;
             btndelete.Enabled = true;
         }
